@@ -1,0 +1,33 @@
+// dot graphs for the Scala 2.8 Collections API
+// legend
+// (C) 2010 by Mathias
+
+digraph legend {
+  bgcolor=transparent
+  ranksep=0
+  
+  // layout help
+  node [shape=plaintext, style=invis]
+  edge [style=invis]
+  Level0 -> Level1 -> Level2
+  
+  // node definitions
+  node [shape=box, style="rounded, filled", fontname=tahoma, fontsize=10, fontcolor=white, color=none]
+  Trait [fillcolor=cadetblue]
+  Class [fillcolor=steelblue]
+  
+  // invisible nodes
+  node [shape=plaintext, style=invis]
+  Spacer; A; B; C; D; E; F
+  
+  // edges
+  edge [style=solid, color=gray, fontname=tahoma, fontsize=10, fontcolor=navy]
+  A -> B [label=" implements "]
+  C -> D [penwidth=3, label=" default implementation "]
+  E -> F [style=dashed, label=" implicit conversion "]
+
+  // layout
+  { rank=same; Level0; Trait; A; B; }
+  { rank=same; Level1; Spacer; C; D; }
+  { rank=same; Level2; Class; E; F }
+}

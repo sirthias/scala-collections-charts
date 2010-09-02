@@ -1,0 +1,75 @@
+// dot graphs for the Scala 2.8 Collections API
+// package scala.collection.immutable
+// (C) 2010 by Mathias
+
+digraph "scala.collection.immutable" {
+  bgcolor=transparent
+  dpi=68
+  
+  // layout help
+  node [shape=plaintext, style=invis]
+  edge [style=invis]
+  Level0 -> Level1 -> Level2 -> Level3 -> Level4 -> Level5 -> Level6 -> Level7
+  
+  // node definitions
+  node [shape=box, style="rounded, filled", fontname=tahoma, fontsize=10, fontcolor=white, color=none, fillcolor=cadetblue]
+  iTraversable [label="Traversable", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Traversable.html"]
+    iIterable [label="Iterable", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Iterable.html"]
+      iSet [label="Set", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Set.html"]
+        iHashSet [fillcolor="steelblue", label="HashSet", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/HashSet.html"]
+        iSortedSet [label="SortedSet", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/SortedSet.html"]
+          TreeSet [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/TreeSet.html"]
+        iBitSet [fillcolor="steelblue", label="BitSet", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/BitSet.html"]
+        ListSet [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/ListSet.html"]
+      iSeq [label="Seq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Seq.html"]
+        iIndexedSeq [label="IndexedSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/IndexedSeq.html"]
+          Vector [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Vector.html"]
+          NumericRange [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/NumericRange.html"]
+          Array [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/Array.html"]
+          String [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/String.html"]
+          Range [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Range.html"]
+        iLinearSeq [label="LinearSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/LinearSeq.html"]
+          List [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/List.html"]
+          Stream [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Stream.html"]
+          iQueue [fillcolor="steelblue", label="Queue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Queue.html"]
+          iStack [fillcolor="steelblue", label="Stack", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Stack.html"]
+      iMap [label="Map", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Map.html"]
+        iHashMap [fillcolor="steelblue", label="HashMap", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/HashMap.html"]
+        iSortedMap [label="SortedMap", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/SortedMap.html"]
+          TreeMap [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/TreeMap.html"]
+        iListMap [fillcolor="steelblue", label="ListMap", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/ListMap.html"]
+
+  // layout help
+  { rank=same; Level0; iTraversable }
+  { rank=same; Level1; iIterable }
+  { rank=same; Level2; iSet; iMap }
+  { rank=same; Level3; }
+  { rank=same; Level4; iSeq }
+  { rank=same; Level5; iIndexedSeq; iLinearSeq }
+  { rank=same; Level6; }
+  { rank=same; Level7; Array; String; }
+
+  // edge definitions
+  edge [style=solid, color=gray]
+  iTraversable -> iIterable [penwidth=3]
+  iIterable -> iSeq [penwidth=3]
+  iSeq -> iIndexedSeq
+  iIndexedSeq -> Vector [penwidth=3]
+  iIndexedSeq -> NumericRange
+  iIndexedSeq -> Range
+  iIndexedSeq -> Array [style=dashed]
+  iIndexedSeq -> String [style=dashed]
+  iSeq -> iLinearSeq -> List [penwidth=3]
+  iLinearSeq -> Stream
+  iLinearSeq -> iQueue
+  iLinearSeq -> iStack
+  iIterable -> iSet
+  iSet -> iHashSet [penwidth=3]
+  iSet -> iSortedSet -> TreeSet
+  iSet -> iBitSet
+  iSet -> ListSet
+  iIterable -> iMap
+  iMap -> iHashMap [penwidth=3]
+  iMap -> iSortedMap -> TreeMap
+  iMap -> iListMap
+}

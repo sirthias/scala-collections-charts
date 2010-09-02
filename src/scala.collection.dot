@@ -1,0 +1,33 @@
+// dot graphs for the Scala 2.8 Collections API
+// package scala.collection
+// (C) 2010 by Mathias
+
+digraph "scala.collection" {
+  bgcolor=transparent
+  
+  // layout help
+  node [shape=plaintext, style=invis]
+  edge [style=invis]
+  Level0 -> Level1 -> Level2 -> Level3
+  
+  // node definitions
+  node [shape=box, style="rounded, filled", fontname=tahoma, fontsize=10, fontcolor=white, color=none, fillcolor=cadetblue]
+  Traversable [URL="http://www.scala-lang.org/api/current/scala/collection/Traversable.html"]
+    Iterable [URL="http://www.scala-lang.org/api/current/scala/collection/Iterable.html"]
+      Seq [URL="http://www.scala-lang.org/api/current/scala/collection/Seq.html"]
+        IndexedSeq [URL="http://www.scala-lang.org/api/current/scala/collection/IndexedSeq.html"]
+        LinearSeq [URL="http://www.scala-lang.org/api/current/scala/collection/LinearSeq.html"]
+      Set [URL="http://www.scala-lang.org/api/current/scala/collection/Set.html"]
+        SortedSet [URL="http://www.scala-lang.org/api/current/scala/collection/SortedSet.html"]
+        BitSet [URL="http://www.scala-lang.org/api/current/scala/collection/BitSet.html"]
+      Map [URL="http://www.scala-lang.org/api/current/scala/collection/Map.html"]
+        SortedMap [URL="http://www.scala-lang.org/api/current/scala/collection/SortedMap.html"]
+
+  // edge definitions
+  edge [style=solid, color=gray]
+  Traversable -> Iterable -> Seq -> IndexedSeq
+  Seq -> LinearSeq
+  Iterable -> Set -> SortedSet
+  Set -> BitSet
+  Iterable -> Map -> SortedMap
+}

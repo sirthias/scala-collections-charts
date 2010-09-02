@@ -1,0 +1,102 @@
+// dot graphs for the Scala 2.8 Collections API
+// package scala.collection.mutable
+// (C) 2010 by Mathias
+
+digraph "scala.collection.mutable" {
+  bgcolor=transparent
+  dpi=68
+  
+  // layout help
+  node [shape=plaintext, style=invis]
+  edge [style=invis]
+  Level0 -> Level1 -> Level2 -> Level3 -> Level4 -> Level5 -> Level6 -> Level7 -> Level8 -> Level9
+  
+  // node definitions
+  node [shape=box, style="rounded, filled", fontname=tahoma, fontsize=10, fontcolor=white, color=none, fillcolor=cadetblue]
+  mTraversable [label="Traversable", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Traversable.html"]    
+    mIterable [label="Iterable", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Iterable.html"]      
+      mMap [label="Map", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Map.html"]
+        mHashMap [fillcolor="steelblue", label="HashMap", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/HashMap.html"]
+        WeakHashMap [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/WeakHashMap.html"]
+        OpenHashMap [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/OpenHashMap.html"]
+        LinkedHashMap [fillcolor="steelblue",URL="http://www.scala-lang.org/api/current/scala/collection/mutable/LinkedHashMap.html"]
+        ObservableMap [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ObservableMap.html"]
+        SynchronizedMap [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedMap.html"]
+        ImmutableMapAdaptor [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ImmutableMapAdaptor.html"]
+        mListMap [fillcolor="steelblue", label="ListMap", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ListMap.html"]
+        MultiMap [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/MultiMap.html"]
+      mSeq [label="Seq", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Seq.html"]
+        mIndexedSeq [label="IndexedSeq", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/IndexedSeq.html"]
+          ArrayBuffer [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArrayBuffer.html"] // also a Buffer
+          ArraySeq [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArraySeq.html"]
+          StringBuilder [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/StringBuilder.html"]
+        Buffer [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Buffer.html"]
+          ObservableBuffer [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ObservableBuffer.html"]
+          SynchronizedBuffer [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedBuffer.html"]
+          ListBuffer [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ListBuffer.html"]
+        mStack [fillcolor="steelblue", label="Stack", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Stack.html"]
+          SynchronizedStack [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedStack.html"]
+        ArrayStack [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArrayStack.html"]
+        PriorityQueue [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/PriorityQueue.html"]
+          SynchronizedPriorityQueue [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedPriorityQueue.html"]
+          mLinearSeq [label="LinearSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/LinearSeq.html"]
+            MutableList [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/MutableList.html"]
+              mQueue [label="Queue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Queue.html"]
+                SynchronizedQueue [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedQueue.html"]
+            LinkedList [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/LinkedList.html"]
+            DoubleLinkedList [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/DoubleLinkedList.html"]
+      mSet [label="Set", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Set.html"]
+        mHashSet [fillcolor="steelblue", label="HashSet", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/HashSet.html"]
+        mBitSet [fillcolor="steelblue", label="BitSet", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/BitSet.html"]
+        ObservableSet [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ObservableSet.html"]
+        SynchronizedSet [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/SynchronizedSet.html"]
+        ImmutableSetAdaptor [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ImmutableSetAdaptor.html"]
+        LinkedHashSet [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/LinkedHashSet.html"]
+
+  // layout help
+  { rank=same; Level0; mTraversable }
+  { rank=same; Level1; mIterable }
+  { rank=same; Level2; mSet; mMap }
+  { rank=same; Level3; }
+  { rank=same; Level4; ObservableSet; SynchronizedSet; ImmutableSetAdaptor; WeakHashMap; OpenHashMap; ObservableMap; SynchronizedMap; ImmutableMapAdaptor }
+  { rank=same; Level5; mSeq }
+  { rank=same; Level6; }
+  { rank=same; Level7; mStack; ArrayStack; PriorityQueue }
+  { rank=same; Level8; ObservableBuffer; SynchronizedBuffer }
+
+  // edge definitions
+  edge [style=solid, color=gray]
+  mTraversable -> mIterable -> mSeq -> mIndexedSeq -> ArrayBuffer [penwidth=3]
+  mIndexedSeq -> ArraySeq
+  mIndexedSeq -> StringBuilder
+  mSeq -> mLinearSeq
+  mLinearSeq -> MutableList [penwidth=3]
+  MutableList -> mQueue -> SynchronizedQueue
+  mLinearSeq -> LinkedList
+  mLinearSeq -> DoubleLinkedList
+  mSeq -> Buffer
+  Buffer -> ArrayBuffer [penwidth=3]
+  Buffer -> ListBuffer
+  Buffer -> ObservableBuffer
+  Buffer -> SynchronizedBuffer
+  mSeq -> mStack -> SynchronizedStack
+  mSeq -> ArrayStack
+  mSeq -> PriorityQueue -> SynchronizedPriorityQueue
+  mIterable -> mSet
+  mSet -> mHashSet [penwidth=3]
+  mSet -> mBitSet
+  mSet -> LinkedHashSet
+  mSet -> ObservableSet
+  mSet -> SynchronizedSet
+  mSet -> ImmutableSetAdaptor
+  mIterable -> mMap
+  mMap -> mHashMap [penwidth=3]
+  mMap -> WeakHashMap
+  mMap -> OpenHashMap
+  mMap -> LinkedHashMap
+  mMap -> mListMap
+  mMap -> MultiMap
+  mMap -> ObservableMap
+  mMap -> SynchronizedMap
+  mMap -> ImmutableMapAdaptor
+}
