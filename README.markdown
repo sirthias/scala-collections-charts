@@ -4,6 +4,8 @@ Scala 2.8 Collection API Charts
 This is a small collection of [Graphviz][] `.dot` files containing the chart description for the most relevant types of the **Scala 2.8 Collection API**.  
 You can see the end result on [this page](http://www.decodified.com/scala/collections-api.xml).
 
+The charts are also available for download on the [download page](http://github.com/sirthias/scala-collections-charts/downloads).
+
 Feel free to use them to your liking, of course I am also open to any improvement ideas you might have.
 
 ### How to build ###
