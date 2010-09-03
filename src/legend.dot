@@ -22,9 +22,9 @@ digraph legend {
   
   // edges
   edge [style=solid, color=gray, fontname=tahoma, fontsize=10, fontcolor=navy]
-  A -> B [label=" implements "]
+  A -> B [label=" implemented by "]
   C -> D [penwidth=3, label=" default implementation "]
-  E -> F [style=dashed, label=" implicit conversion "]
+  E -> F [style=dashed, label=" via implicit conversion "]
 
   // layout
   { rank=same; Level0; Trait; A; B; }
