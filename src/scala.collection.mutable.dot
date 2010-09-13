@@ -7,7 +7,7 @@ digraph "scala.collection.mutable" {
   dpi=68
   
   // layout help
-  node [shape=plaintext, style=invis]
+  node [shape=point, style=invis]
   edge [style=invis]
   Level0 -> Level1 -> Level2 -> Level3 -> Level4 -> Level5 -> Level6 -> Level7 -> Level8 -> Level9
   
@@ -27,8 +27,9 @@ digraph "scala.collection.mutable" {
         MultiMap [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/MultiMap.html"]
       mSeq [label="Seq", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Seq.html"]
         mIndexedSeq [label="IndexedSeq", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/IndexedSeq.html"]
-          ArrayBuffer [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArrayBuffer.html"] // also a Buffer
+          ArrayBuffer [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArrayBuffer.html"] // also a Buffer          
           ArraySeq [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArraySeq.html"]
+          Array [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/Array.html"]
           StringBuilder [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/mutable/StringBuilder.html"]
         Buffer [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/Buffer.html"]
           ObservableBuffer [URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ObservableBuffer.html"]
@@ -61,13 +62,14 @@ digraph "scala.collection.mutable" {
   { rank=same; Level4; ObservableSet; SynchronizedSet; ImmutableSetAdaptor; WeakHashMap; OpenHashMap; ObservableMap; SynchronizedMap; ImmutableMapAdaptor }
   { rank=same; Level5; mSeq }
   { rank=same; Level6; }
-  { rank=same; Level7; mStack; ArrayStack; PriorityQueue }
-  { rank=same; Level8; ObservableBuffer; SynchronizedBuffer }
+  { rank=same; Level7; ArraySeq; mStack; ArrayStack; PriorityQueue }
+  { rank=same; Level8; Array; ObservableBuffer; SynchronizedBuffer }
 
   // edge definitions
   edge [style=solid, color=gray]
   mTraversable -> mIterable -> mSeq -> mIndexedSeq -> ArrayBuffer [penwidth=3]
   mIndexedSeq -> ArraySeq
+  mIndexedSeq -> Array [style=dashed]
   mIndexedSeq -> StringBuilder
   mSeq -> mLinearSeq
   mLinearSeq -> MutableList [penwidth=3]

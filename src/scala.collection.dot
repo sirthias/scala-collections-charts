@@ -6,7 +6,7 @@ digraph "scala.collection" {
   bgcolor=transparent
   
   // layout help
-  node [shape=plaintext, style=invis]
+  node [shape=point, style=invis]
   edge [style=invis]
   Level0 -> Level1 -> Level2 -> Level3
   

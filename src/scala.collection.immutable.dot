@@ -7,9 +7,9 @@ digraph "scala.collection.immutable" {
   dpi=68
   
   // layout help
-  node [shape=plaintext, style=invis]
+  node [shape=point, style=invis]
   edge [style=invis]
-  Level0 -> Level1 -> Level2 -> Level3 -> Level4 -> Level5 -> Level6 -> Level7
+  Level0 -> Level1 -> Level2 -> Level3 -> Level4 -> Level5
   
   // node definitions
   node [shape=box, style="rounded, filled", fontname=tahoma, fontsize=10, fontcolor=white, color=none, fillcolor=cadetblue]
@@ -25,7 +25,6 @@ digraph "scala.collection.immutable" {
         iIndexedSeq [label="IndexedSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/IndexedSeq.html"]
           Vector [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Vector.html"]
           NumericRange [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/NumericRange.html"]
-          Array [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/Array.html"]
           String [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/String.html"]
           Range [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Range.html"]
         iLinearSeq [label="LinearSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/LinearSeq.html"]
@@ -46,8 +45,6 @@ digraph "scala.collection.immutable" {
   { rank=same; Level3; }
   { rank=same; Level4; iSeq }
   { rank=same; Level5; iIndexedSeq; iLinearSeq }
-  { rank=same; Level6; }
-  { rank=same; Level7; Array; String; }
 
   // edge definitions
   edge [style=solid, color=gray]
@@ -57,7 +54,6 @@ digraph "scala.collection.immutable" {
   iIndexedSeq -> Vector [penwidth=3]
   iIndexedSeq -> NumericRange
   iIndexedSeq -> Range
-  iIndexedSeq -> Array [style=dashed]
   iIndexedSeq -> String [style=dashed]
   iSeq -> iLinearSeq -> List [penwidth=3]
   iLinearSeq -> Stream
