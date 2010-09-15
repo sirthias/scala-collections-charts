@@ -69,7 +69,7 @@ digraph "scala.collection.mutable" {
   edge [style=solid, color=gray]
   mTraversable -> mIterable -> mSeq -> mIndexedSeq -> ArrayBuffer [penwidth=3]
   mIndexedSeq -> ArraySeq
-  mIndexedSeq -> Array [style=dashed]
+  mIndexedSeq -> Array [style=dashed, URL="http://www.scala-lang.org/api/current/scala/collection/mutable/ArrayOps.html"]
   mIndexedSeq -> StringBuilder
   mSeq -> mLinearSeq
   mLinearSeq -> MutableList [penwidth=3]

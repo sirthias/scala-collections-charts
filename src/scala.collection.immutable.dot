@@ -25,7 +25,7 @@ digraph "scala.collection.immutable" {
         iIndexedSeq [label="IndexedSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/IndexedSeq.html"]
           Vector [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Vector.html"]
           NumericRange [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/NumericRange.html"]
-          String [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/String.html"]
+          String [fillcolor="steelblue", URL="http://download.oracle.com/javase/6/docs/api/java/lang/String.html"]
           Range [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/Range.html"]
         iLinearSeq [label="LinearSeq", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/LinearSeq.html"]
           List [fillcolor="steelblue", URL="http://www.scala-lang.org/api/current/scala/collection/immutable/List.html"]
@@ -54,7 +54,7 @@ digraph "scala.collection.immutable" {
   iIndexedSeq -> Vector [penwidth=3]
   iIndexedSeq -> NumericRange
   iIndexedSeq -> Range
-  iIndexedSeq -> String [style=dashed]
+  iIndexedSeq -> String [style=dashed, URL="http://www.scala-lang.org/api/current/scala/collection/immutable/StringOps.html"]
   iSeq -> iLinearSeq -> List [penwidth=3]
   iLinearSeq -> Stream
   iLinearSeq -> iQueue
